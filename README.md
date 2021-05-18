@@ -10,15 +10,15 @@ Lien du bot : *Se trouve dans la description du bot*
 ### Commandes
 
 **-profil [pseudo]**
-Sert à visualiser le profil Minecraft d'un joueur :
+Sert à visualiser le profil Minecraft d'un joueur :<br />
 ![-profil](https://user-images.githubusercontent.com/77621024/118692730-a60d3800-b80a-11eb-9869-8407965a0406.png)
 
  **-paladium**
- Affiche les infos sur le serveur Paladium :
+ Affiche les infos sur le serveur Paladium :<br />
  ![-paladium](https://user-images.githubusercontent.com/77621024/118692827-c0dfac80-b80a-11eb-93f3-95f675d637a9.png)
 
 **-hypixel**
-Affiche les infos sur le serveur Hypixel :
+Affiche les infos sur le serveur Hypixel :<br />
 ![-hypixel](https://user-images.githubusercontent.com/77621024/118692921-d8b73080-b80a-11eb-81cf-6e4769560010.png)
 
 **-help**
