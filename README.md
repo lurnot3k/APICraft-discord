@@ -1,5 +1,31 @@
-# APICraft-discord
+![release](https://img.shields.io/badge/version-v0.1%20(b%C3%AAta)-blue)
+![mis à jour](https://img.shields.io/badge/mis%20%C3%A0%20jour%20%3F-oui-orange)
+![langage](https://img.shields.io/badge/fait%20avec-python-yellow) <br />
+<h1 style="text-align: center;"><strong>APICraft</strong></h1>
 
 Mon bot discord fait avec discord.py.<br />
+C'est un bot en rapport avec Minecraft qui affiche les profils des joueurs ainsi que quelques infos sur certains serveurs.
 Lien du bot : *Se trouve dans la description du bot*
- 
+
+### Commandes
+
+**-profil [pseudo]**
+Sert à visualiser le profil Minecraft d'un joueur :
+![-profil](https://user-images.githubusercontent.com/77621024/118692730-a60d3800-b80a-11eb-9869-8407965a0406.png)
+
+ **-paladium**
+ Affiche les infos sur le serveur Paladium :
+ ![-paladium](https://user-images.githubusercontent.com/77621024/118692827-c0dfac80-b80a-11eb-93f3-95f675d637a9.png)
+
+**-hypixel**
+Affiche les infos sur le serveur Hypixel :
+![-hypixel](https://user-images.githubusercontent.com/77621024/118692921-d8b73080-b80a-11eb-81cf-6e4769560010.png)
+
+**-help**
+Affiche les commandes disponibles avec le Bot.
+
+### Récupération
+
+Vous pouvez récupérer les fichiers du Bot avec la commande git :
+
+```https://github.com/orangina-mc/APICraft-discord.git```
