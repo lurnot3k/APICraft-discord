@@ -21,7 +21,7 @@ Sert à visualiser le profil Minecraft d'un joueur :<br /><br />
 Affiche les infos sur le serveur Hypixel :<br /><br />
 ![-hypixel](https://user-images.githubusercontent.com/77621024/118692921-d8b73080-b80a-11eb-81cf-6e4769560010.png)
 
-**-help**
+```-help```<br />
 Affiche les commandes disponibles avec le Bot.
 
 ### Récupération
