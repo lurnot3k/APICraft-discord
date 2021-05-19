@@ -29,3 +29,7 @@ Affiche les commandes disponibles avec le Bot.
 Vous pouvez récupérer les fichiers du Bot avec la commande git :
 
 ```https://github.com/orangina-mc/APICraft-discord.git```
+
+### Problèmes
+
+Si vous avez un quelconque problème, n'hésitez pas à ouvrir une **"issue"**
