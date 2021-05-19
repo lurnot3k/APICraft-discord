@@ -31,7 +31,7 @@ async def on_message(message):
 			fois = f"{body.string}".count("changedToAt")
 			embed = discord.Embed(title="", description="", color=0x3464eb)
 			embed.set_author(name=f"Profil de {pseudo}", icon_url="https://cdn.discordapp.com/attachments/566639457286094860/841555331631808532/Minecraft-logos-removebg-preview.png", url = f"http://fr.namemc.com/profile/{pseudo}")
-			embed.set_thumbnail(url=f"https://visage.surgeplay.com/face/{uuid}")
+			embed.set_thumbnail(url=f"https://mc-heads.net/avatar/{uuid}")
 			embed.add_field(name ="**UUID**", value =f"`{uuid}`", inline =False)
 			embed.add_field(name ="**Skin**", value =f"[Télécharger le Skin de {pseudo}](https://mc-heads.net/download/{uuid})", inline =False)
 			embed.add_field(name = "Nombre de fois où le pseudo a été changé :", value =f"`{fois}`" )
