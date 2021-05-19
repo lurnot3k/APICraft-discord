@@ -1,7 +1,7 @@
 ![release](https://img.shields.io/badge/version-v0.1%20(b%C3%AAta)-blue)
 ![mis à jour](https://img.shields.io/badge/mis%20%C3%A0%20jour%20%3F-oui-orange)
 ![langage](https://img.shields.io/badge/fait%20avec-python-yellow) <br />
-<h1 style="text-align: center;"><strong>APICraft</strong></h1>
+<h1><strong>APICraft</strong></h1>
 
 Mon bot discord fait avec discord.py.<br />
 C'est un bot en rapport avec Minecraft qui affiche les profils des joueurs ainsi que quelques infos sur certains serveurs.
