@@ -32,4 +32,4 @@ Vous pouvez récupérer les fichiers du Bot avec la commande git :
 
 ### Problèmes
 
-Si vous avez un quelconque problème, n'hésitez pas à ouvrir une **"issue"**
+Si vous avez un quelconque problème, n'hésitez pas à ouvrir une **"issue"** [ici](https://github.com/orangina-mc/APICraft-discord/issues)
