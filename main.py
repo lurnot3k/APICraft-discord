@@ -21,24 +21,30 @@ async def on_message(message):
 		if message.content.startswith('-profil'):
 			pseudo = message.content[8:]
 			uuid = MojangAPI.get_uuid(pseudo)
-			name = MojangAPI.get_name_history(uuid)
-			for data in name:
-				name_history = f"{data['name']} depuis {data['changed_to_at']}"
-			mojang = requests.get("https://api.mojang.com/user/profiles/{}/names" .format(uuid))
-			page = mojang.content
-			soup = BeautifulSoup(page, features="lxml")
-			body = soup.find("body")
-			fois = f"{body.string}".count("changedToAt")
-			embed = discord.Embed(title="", description="", color=0x3464eb)
-			embed.set_author(name=f"Profil de {pseudo}", icon_url="https://cdn.discordapp.com/attachments/566639457286094860/841555331631808532/Minecraft-logos-removebg-preview.png", url = f"http://fr.namemc.com/profile/{pseudo}")
-			embed.set_thumbnail(url=f"https://mc-heads.net/avatar/{uuid}")
-			embed.add_field(name ="**UUID**", value =f"`{uuid}`", inline =False)
-			embed.add_field(name ="**Skin**", value =f"[Télécharger le Skin de {pseudo}](https://mc-heads.net/download/{uuid})", inline =False)
-			embed.add_field(name = "Nombre de fois où le pseudo a été changé :", value =f"`{fois}`" )
-			await message.channel.send(embed = embed)
+			username = MojangAPI.get_username("{}" .format(uuid))
+
+			if not username:
+    				await message.channel.send("Le pseudo renseigné n'est pas valide !")
+			
+			else:
+				name = MojangAPI.get_name_history(uuid)
+				for data in name:
+					name_history = f"{data['name']} depuis {data['changed_to_at']}"
+				mojang = requests.get("https://api.mojang.com/user/profiles/{}/names" .format(uuid))
+				page = mojang.content
+				soup = BeautifulSoup(page, features="lxml")
+				body = soup.find("body")
+				fois = f"{body.string}".count("changedToAt")
+				embed = discord.Embed(title="", description="", color=0x3464eb)
+				embed.set_author(name=f"Profil de {username}", icon_url="https://cdn.discordapp.com/attachments/566639457286094860/841555331631808532/Minecraft-logos-removebg-preview.png", url = f"http://fr.namemc.com/profile/{username}")
+				embed.set_thumbnail(url=f"https://mc-heads.net/avatar/{uuid}")
+				embed.add_field(name ="**UUID**", value =f"`{uuid}`", inline =False)
+				embed.add_field(name ="**Skin**", value =f"[Télécharger le Skin de {username}](https://mc-heads.net/download/{uuid})", inline =False)
+				embed.add_field(name = "Nombre de fois où le pseudo a été changé :", value =f"`{fois}`" )
+				await message.channel.send(embed = embed)
 
 		if message.content.startswith('-help'):
-			await message.channel.send("**Les commandes du bot sont :**\n\n`-profil [pseudo]` pour afficher le profil Minecraft d'un joueur.\n`-hypixel` pour afficher les infos sur le serveur hypixel.")
+			await message.channel.send("**Les commandes du bot sont :**\n\n`-profil [pseudo]` pour afficher le profil Minecraft d'un joueur.\n`-hypixel` pour afficher les infos sur le serveur hypixel.\n`-paladium` pour afficher les infos sur le serveur Paladium.")
 
 		if message.content.startswith("-hypixel"):
 			hypixel_online = requests.get("https://minecraft-api.com/api/ping/status/mc.hypixel.net/25565")
@@ -82,7 +88,6 @@ async def on_message(message):
 			content3 = hypixel_ver.content
 			soup4 = BeautifulSoup(content3, features="lxml")
 			page3 = soup4.find("body")
-			ver =f"{page3.string}"
 			
 			if page.string.startswith("true"):
 				status ="`En ligne` :green_circle:"
@@ -91,11 +96,11 @@ async def on_message(message):
 				status ="`Hors Ligne` :red_circle:"
 			
 			embed = discord.Embed(title="", description="", color=0xfc033d)
-			embed.set_author(name=f"Infos Palafdium", icon_url="https://pbs.twimg.com/profile_images/1249367268162764800/nT0fW4I-.jpg")
+			embed.set_author(name=f"Infos Paladium", icon_url="https://pbs.twimg.com/profile_images/1249367268162764800/nT0fW4I-.jpg")
 			embed.set_thumbnail(url="https://pbs.twimg.com/profile_images/1249367268162764800/nT0fW4I-.jpg")
 			embed.add_field(name ="Statut", value =f"{status}", inline =False)
 			embed.add_field(name ="Nombre de joueurs", value =f"`{page2.string}`", inline =False)
-			embed.add_field(name ="Version du serveur", value =f"`{ver}`" )
+			embed.add_field(name ="Version du serveur", value =f"`{page3.string}`" )
 			await message.channel.send(embed = embed)
 
 
