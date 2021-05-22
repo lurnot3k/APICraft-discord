@@ -5,7 +5,7 @@
 
 Mon bot discord fait avec discord.py.<br />
 C'est un bot en rapport avec Minecraft qui affiche les profils des joueurs ainsi que quelques infos sur certains serveurs.
-Lien du bot : *Se trouve dans la description du bot*
+Lien du bot : *Se trouve sur le site*
 
 ### Commandes
 
