@@ -4,7 +4,7 @@
 <h1><strong>APICraft</strong></h1>
 
 Mon bot discord fait avec discord.py.<br />
-C'est un bot en rapport avec Minecraft qui affiche les profils des joueurs ainsi que quelques infos sur certains serveurs.
+C'est un bot en rapport avec Minecraft qui affiche les profils des joueurs ainsi que quelques infos sur certains serveurs.<br />
 Lien du bot : *Se trouve sur le site*
 
 ### Commandes
