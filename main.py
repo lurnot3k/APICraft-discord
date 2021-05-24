@@ -94,6 +94,18 @@ async def on_message(message):
 
 			else:
 				status ="`Hors Ligne` :red_circle:"
+				
+			if not page2:
+    				page2 = "0"
+			
+			else:
+				pass
+			
+			if not page3:
+    				page3 = "Serveur hors-ligne"
+			
+			else:
+				pass
 			
 			embed = discord.Embed(title="", description="", color=0xfc033d)
 			embed.set_author(name=f"Infos Paladium", icon_url="https://pbs.twimg.com/profile_images/1249367268162764800/nT0fW4I-.jpg")
