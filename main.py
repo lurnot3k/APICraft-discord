@@ -99,7 +99,7 @@ async def on_message(message):
     				onlineplayers = "0"
 			
 			else:
-				onlibneplayers = f"{page2.string}"
+				onlineplayers = f"{page2.string}"
 			
 			if not page3:
     				serverver = "Serveur hors-ligne"
