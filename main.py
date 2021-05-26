@@ -59,20 +59,32 @@ async def on_message(message):
 			content3 = hypixel_ver.content
 			soup4 = BeautifulSoup(content3, features="lxml")
 			page3 = soup4.find("body")
-			ver =f"{page3.string}"[12:]
 			
 			if page.string == "En ligne":
 				status =f"`{page.string}` :green_circle:"
+				embed = discord.Embed(title="", description="", color=0x1ac447)
 
 			else:
 				status =f"`{page.string}` :red_circle:"
+				embed = discord.Embed(title="", description="", color=0xfc033d)
+
+			if not page2:
+    				onlineplayers = "0"
 			
-			embed = discord.Embed(title="", description="", color=0xfc033d)
+			else:
+				onlineplayers = f"{page2.string}"
+			
+			if not page3:
+    				serverver = "Serveur hors-ligne"
+			
+			else:
+				serverver = f"{page3.string}"[12:]
+
 			embed.set_author(name=f"Infos Hypixel", icon_url="https://downloadwap.com/thumbs2/wallpapers/p2ls/2019/misc/50/9f09606513560842.jpg")
 			embed.set_thumbnail(url="https://downloadwap.com/thumbs2/wallpapers/p2ls/2019/misc/50/9f09606513560842.jpg")
 			embed.add_field(name ="Statut", value =f"{status}", inline =False)
-			embed.add_field(name ="Nombre de joueurs", value =f"`{page2.string} / 200000`", inline =False)
-			embed.add_field(name ="Version du serveur", value =f"`{ver}`" )
+			embed.add_field(name ="Nombre de joueurs", value =f"`{onlineplayers} / 200000`", inline =False)
+			embed.add_field(name ="Version du serveur", value =f"`{serverver}`" )
 			await message.channel.send(embed = embed)
 
 		if message.content.startswith("-paladium"):
@@ -90,11 +102,13 @@ async def on_message(message):
 			page3 = soup4.find("body")
 			
 			if page.string.startswith("true"):
-				status ="`En ligne` :green_circle:"
+				status = "`En ligne` :green_circle:"
+				embed = discord.Embed(title="", description="", color=0x1ac447)
 
 			else:
-				status ="`Hors Ligne` :red_circle:"
-				
+				status = "`Hors Ligne` :red_circle:"
+				embed = discord.Embed(title="", description="", color=0xfc033d)
+			
 			if not page2:
     				onlineplayers = "0"
 			
@@ -106,14 +120,15 @@ async def on_message(message):
 			
 			else:
 				serverver = f"{page3.string}"
+
 			
-			embed = discord.Embed(title="", description="", color=0xfc033d)
 			embed.set_author(name=f"Infos Paladium", icon_url="https://pbs.twimg.com/profile_images/1249367268162764800/nT0fW4I-.jpg")
 			embed.set_thumbnail(url="https://pbs.twimg.com/profile_images/1249367268162764800/nT0fW4I-.jpg")
 			embed.add_field(name ="Statut", value =f"{status}", inline =False)
-			embed.add_field(name ="Nombre de joueurs", value =f"`{page2.string}`", inline =False)
-			embed.add_field(name ="Version du serveur", value =f"`{page3.string}`" )
+			embed.add_field(name ="Nombre de joueurs", value =f"`{onlineplayers}`", inline =False)
+			embed.add_field(name ="Version du serveur", value =f"`{serverver}`" )
 			await message.channel.send(embed = embed)
+
 
 
 
