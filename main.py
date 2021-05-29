@@ -128,8 +128,44 @@ async def on_message(message):
 			embed.add_field(name ="Nombre de joueurs", value =f"`{onlineplayers}`", inline =False)
 			embed.add_field(name ="Version du serveur", value =f"`{serverver}`" )
 			await message.channel.send(embed = embed)
+			
+		if message.content.startswith("-brickmc"):
+			brickmc_online = requests.get("https://eu.mc-api.net/v3/server/status-http/mc.imot3k.fr")
+			content = brickmc_online.content
+			soup2 = BeautifulSoup(content, features="lxml")
+			page = soup2.find("body")
+			brickmc_players = requests.get("https://api.serveurs-minecraft.com/api.php?Joueurs_En_Ligne_Ping&ip=mc.imot3k.fr&port=25565")
+			content2 = brickmc_players.content
+			soup3 = BeautifulSoup(content2, features="lxml")
+			page2 = soup3.find("body")
+			
+			if page.string.startswith("true"):
+				status = "`En ligne` :green_circle:"
+				embed = discord.Embed(title="", description="", color=0x1ac447)
 
+			else:
+				status = "`Hors Ligne` :red_circle:"
+				embed = discord.Embed(title="", description="", color=0xfc033d)
+			
+			if not page2:
+    				onlineplayers = "0"
 
+			else:
+				onlineplayers = f"{page2.string}"
+				
+
+			if not page2:
+					serverver = "Serveur hors-ligne"
+			
+			else:
+				serverver = "1.16.1"
+			
+			embed.set_author(name=f"Infos BrickMC", icon_url="https://media.discordapp.net/attachments/840836823798382605/848180274093096970/brickmc.png")
+			embed.set_thumbnail(url="https://media.discordapp.net/attachments/840836823798382605/848180274093096970/brickmc.png")
+			embed.add_field(name ="Statut", value =f"{status}", inline =False)
+			embed.add_field(name ="Nombre de joueurs", value =f"`{onlineplayers}`", inline =False)
+			embed.add_field(name ="Version du serveur", value =f"`{serverver}`" )
+			await message.channel.send(embed = embed)		
 
 
 client.run('TOKEN')
