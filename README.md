@@ -26,7 +26,8 @@ Affiche les commandes disponibles avec le Bot.
 
 ```-brickmc```<br /><br />
 Affiche les infos sur le serveur brickmc d'iMot3k.<br /><br />
-![-brickmc](https://user-images.githubusercontent.com/77621024/120094176-2ee77600-c11f-11eb-95d3-2558dedf1515.png)
+![-brickmc](https://user-images.githubusercontent.com/77621024/120094309-d6fd3f00-c11f-11eb-9fb5-b206637cc02d.png)
+
 
 ### Récupération
 
