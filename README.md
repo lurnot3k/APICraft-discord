@@ -24,6 +24,10 @@ Affiche les infos sur le serveur Hypixel :<br /><br />
 ```-help```<br /><br />
 Affiche les commandes disponibles avec le Bot.
 
+```-brickmc```<br /><br />
+Affiche les infos sur le serveur brickmc d'iMot3k.<br /><br />
+![-brickmc](https://ton.twitter.com/i/ton/data/dm/1398676136524226569/1398676107793207299/748kYmDq.jpg)
+
 ### Récupération
 
 Vous pouvez récupérer les fichiers du Bot avec la commande git :
