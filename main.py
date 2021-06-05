@@ -88,7 +88,7 @@ async def on_message(message):
 			await message.channel.send(embed = embed)
 
 		if message.content.startswith("-paladium"):
-			paladium_online = requests.get("https://api.serveurs-minecraft.com/api.php?Etat_Query&ip=proxy.paladium-pvp.fr&port=25565")
+			paladium_online = requests.get("https://eu.mc-api.net/v3/server/status-http/proxy.paladium-pvp.fr")
 			content = paladium_online.content
 			soup2 = BeautifulSoup(content, features="lxml")
 			page = soup2.find("body")
@@ -102,12 +102,17 @@ async def on_message(message):
 			page3 = soup4.find("body")
 			
 			if not page:
-				status ="`Hors Ligne` :red_circle:"
-				embed = discord.Embed(title="", description="", color=0xfc033d)
+					status ="`Hors Ligne` :red_circle:"
+					embed = discord.Embed(title="", description="", color=0xfc033d)
 
 			else:
-				status ="`En Ligne` :green_circle:"
-				embed = discord.Embed(title="", description="", color=0x1ac447)
+				if page.string.startswith("true"):
+					status ="`En Ligne` :green_circle:"
+					embed = discord.Embed(title="", description="", color=0x1ac447)
+
+				if page.string.startswith("false"):
+					status ="`Hors Ligne` :red_circle:"
+					embed = discord.Embed(title="", description="", color=0xfc033d)
 			
 			if not page2:
     				onlineplayers = "0"
@@ -140,12 +145,17 @@ async def on_message(message):
 			page2 = soup3.find("body")
 			
 			if not page:
-				status =f"`Hors Ligne` :red_circle:"
-				embed = discord.Embed(title="", description="", color=0xfc033d)
+					status ="`Hors Ligne` :red_circle:"
+					embed = discord.Embed(title="", description="", color=0xfc033d)
 
 			else:
-				status ="`En Ligne` :green_circle:"
-				embed = discord.Embed(title="", description="", color=0x1ac447)
+				if page.string.startswith("true"):
+					status ="`En Ligne` :green_circle:"
+					embed = discord.Embed(title="", description="", color=0x1ac447)
+
+				if page.string.startswith("false"):
+					status ="`Hors Ligne` :red_circle:"
+					embed = discord.Embed(title="", description="", color=0xfc033d)
 			
 			if not page2:
     				onlineplayers = "0"
