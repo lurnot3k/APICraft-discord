@@ -189,7 +189,7 @@ async def on_message(message):
 			embed.add_field(name ="Statut", value =f"{status}", inline =False)
 			embed.add_field(name ="Nombre de joueurs", value =f"`{onlineplayers}`", inline =False)
 			embed.add_field(name ="Version du serveur", value =f"`{serverver}`" )
-			await message.channel.send(embed = embed)	
+			await message.channel.send(embed = embed) 	
 
 
 
