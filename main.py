@@ -78,7 +78,14 @@ async def on_message(message):
     				serverver = "Serveur hors ligne"
 			
 			else:
-				serverver = f"{page3.string}"[12:]
+				
+				if "Requires" not in page3.string:
+					serverver = "Indéterminé"
+
+				else:
+					serverver = f"{page3.string}"[12:]
+					
+
 
 			embed.set_author(name=f"Infos Hypixel", icon_url="https://downloadwap.com/thumbs2/wallpapers/p2ls/2019/misc/50/9f09606513560842.jpg")
 			embed.set_thumbnail(url="https://downloadwap.com/thumbs2/wallpapers/p2ls/2019/misc/50/9f09606513560842.jpg")
@@ -124,7 +131,14 @@ async def on_message(message):
     				serverver = "Serveur hors ligne"
 			
 			else:
-				serverver = f"{page3.string}"
+				
+				if "Requires" not in page3.string:
+					serverver = "Indéterminé"
+
+				else:
+					serverver = f"{page3.string}"
+
+			
 
 			
 			embed.set_author(name=f"Infos Paladium", icon_url="https://pbs.twimg.com/profile_images/1249367268162764800/nT0fW4I-.jpg")
