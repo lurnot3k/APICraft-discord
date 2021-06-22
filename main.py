@@ -132,8 +132,8 @@ async def on_message(message):
 			
 			else:
 				
-				if "Requires" not in page3.string:
-					serverver = "1.7"
+				if "1.7" not in page3.string:
+					serverver = "Indéterminé"
 
 				else:
 					serverver = f"{page3.string}"
