@@ -1,5 +1,5 @@
 ![release](https://img.shields.io/badge/version-v1.1%20-blue)
-![mis à jour](https://img.shields.io/badge/mis%20%C3%A0%20jour%20%3F-oui-orange)
+![mis à jour](https://img.shields.io/badge/mis%20%C3%A0%20jour%20%3F-non-orange)
 ![langage](https://img.shields.io/badge/fait%20avec-python-yellow) <br />
 <h1><strong>APICraft</strong></h1>
 
